@@ -1,0 +1,17 @@
+{ 
+    "menu": "Menu",
+    "home": "Home",
+    "navigate":"Navigate",
+    "categories":"Categories",
+    "cart":"Shopping Cart",
+    "wishlist":"Wishlist",
+    "about": "About",
+	"categories":"Categories",
+    "login": "Login",
+    "logout":"Logout",
+    "account":"Account",
+    "signup":"Signup",
+    "popular":"Popular Products",
+    "settings":"Settings",
+    "feedback":"Feedback"
+}

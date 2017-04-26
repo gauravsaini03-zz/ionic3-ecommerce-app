@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Product Detail</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons end>
+      <button ion-button (click)="searchField()">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="presentPopover($event)">
+          <ion-icon ios="ios-more" md="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="product-detail" style="background-color: #f4f4f4;">
+
+  <ion-slides pager style="height: 250px">
+    <ion-slide>
+      <img src="assets/img/banner-1.webp">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/banner-2.webp">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/banner-3.webp">
+    </ion-slide>
+  </ion-slides>
+  <ion-card>
+    <ion-card-content>
+      <h2>Lenevo Vibe K5 Note</h2>
+      <small >Special Price</small>
+      <p class="price"> {{ 13499 | currency: 'INR' }} </p>
+      <ion-badge width="25">4.1<ion-icon name="star"></ion-icon></ion-badge> 
+        <span style="font-size: 12px;color: #717171;">340 ratings, 58 reviews</span>
+     </ion-card-content>
+      <ion-row>
+        <ion-col width-50 >
+          <ion-icon name="share-alt">Share</ion-icon>
+        </ion-col>
+        <ion-col width-50 >
+            <ion-icon name="heart">Wishlist</ion-icon>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-content>
+     <ion-row class="detail">
+        Details
+     </ion-row>
+       <h2><b>Note</b></h2>
+        <ul>
+          This Phone is Eligible for Jio Happy New Year Offer, to Avail this Offer Please Reach Out to your Nearest Brand Outlet. For more information please refer to http://dl.
+        </ul> 
+        <h2><b>Highlights</b></h2>
+         <li>4 GB RAM|32 GB ROM|Expandable Upto 128 GB</li>
+         <li>5.5 inch Full HD Display</li>
+         <li>13MP Primary Camera | 8MP Front</li>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row class="detail">
+          Ratings & Reviews
+      </ion-row>
+      <ion-row>
+        <ion-col width-50>
+          <span style=" font-size: xx-large; ">4.1
+            <ion-icon name="star"></ion-icon>
+          </span> <br>
+          <span style="font-size: 12px;color: #717171;">385161 ratings</span>
+          <span style="font-size: 12px;color: #717171;">,  20137 reviews</span>
+        </ion-col>
+        <ion-col>
+          <rating [(ngModel)]="rate" readOnly="false" max="5"></rating>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer style="background-color: #fff;">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <button ion-button full clear (click)="addToCart()">
+               <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon> Add To Cart
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <ion-buttons>
+            <button ion-button full (click)="buyNow()">
+              <ion-icon name="menu"></ion-icon>Buy Now
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>

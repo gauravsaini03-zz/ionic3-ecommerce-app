@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  	<ion-title>{{ 'categories' | translate }}</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button (click)="search()">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="categories">
+
+  <ion-list-header *ngIf="!categoryList">Fetching Categories ....</ion-list-header>
+
+	<ion-list *ngFor="let cat of categoryList">
+
+    <ion-list-header>{{cat.name}}</ion-list-header>
+
+    <ion-item *ngFor="let subCat of cat.child">
+      <ion-avatar item-left>
+        <img [src]="subCat.image">
+      </ion-avatar>
+      <h2>{{subCat.name}}</h2>
+      <p>{{subCat.description}}</p>
+      <button ion-button clear item-right (click)="goToProducts(subCat.id)">View</button>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

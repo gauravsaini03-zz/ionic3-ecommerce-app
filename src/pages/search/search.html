@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-navbar color="light">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateSchedule()"
+                   placeholder="Search">
+    </ion-searchbar>
+<!--     <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+ -->  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+    	Hello
+    </ion-item>
+    <ion-item>
+    	test
+    </ion-item>
+    <ion-item>
+    	test
+    </ion-item>
+  </ion-list>
+</ion-content>

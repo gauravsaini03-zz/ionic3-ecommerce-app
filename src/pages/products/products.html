@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Products</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="searchField()">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="products">
+
+  <ion-list>
+    <ion-item>
+      <ion-note item-left>
+        Duplicate products for VirtualScroll demo
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+	<ion-grid [virtualScroll]="products" approxItemHeight="40px">
+	  <ion-row *virtualItem="let product" (click)="goToProductDetail(product)">
+	    <ion-col width-33>
+	    	<ion-img class="v-img" [src]="product.image"></ion-img>
+	    </ion-col>
+	    <ion-col width-67>
+	    	<p>{{product.name}}</p>
+	    	<ion-badge item-right>4.1</ion-badge> 340 ratings
+		    <p class="price"> {{ product.price | currency: 'INR' }} </p>
+	    </ion-col>
+      <ion-item-options side="left">
+        <button primary>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button secondary>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+	  </ion-row>
+	</ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  	<ion-grid>
+  		<ion-row>
+  			<ion-col>
+  				<ion-buttons>
+			      <button ion-button full clear (click)="presentFilter()">
+			         <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon>&nbsp;Filter
+			      </button>
+			    </ion-buttons>
+  			</ion-col>
+  			<ion-col>
+  				<ion-buttons>
+			      <button ion-button full clear (click)="sortBy()">
+			        <ion-icon name="menu"></ion-icon>&nbsp;Sort
+			      </button>
+			    </ion-buttons>
+  			</ion-col>
+  		</ion-row>
+  	</ion-grid>
+</ion-footer>

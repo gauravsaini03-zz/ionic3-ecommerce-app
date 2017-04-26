@@ -1,0 +1,119 @@
+<!--
+  Generated template for the ShowcartPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+  	<ion-title>Showcart</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="showcart" style="background-color: #f4f4f4;">
+<!-- First Item -->
+	<ion-card>
+		<ion-card-content>
+			<ion-row>
+	    	  <h2>Jwellary Charms beads</h2>
+			</ion-row>
+			<ion-row>
+				<ion-col width-67>
+	    	  		<small>Seller : SansarIndia</small>
+	    	  		<p class="price">{{ 499 | currency:'INR'}}<span class="span-styling">{{ 1499 | currency:'INR'}}</span><span class="discount-styling">54 % off</span></p>
+	    	  		<small style="color: #388e3c;">1 Offer Available</small>
+	    	  		<p>Free delievery in 6-9 days</p>
+				</ion-col>
+				<ion-col width-33>
+				   <img src="assets/img/banner-1.webp">
+				   	<ion-select [(ngModel)]="quantity">
+				      <ion-option value="1">1</ion-option>
+				      <ion-option value="2">2</ion-option>
+				      <ion-option value="3">3</ion-option>
+				    </ion-select>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+		<ion-row class="row">
+			<ion-col width-50>
+		        <p>MOVE TO WISHLIST</p>
+			</ion-col>
+			<ion-col width-50>
+				<p>REMOVE</p>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+	<!-- Second Item -->
+	<ion-card>
+		<ion-card-content>
+			<ion-row>
+	    	  <h2>Jwellary Charms beads</h2>
+			</ion-row>
+			<ion-row>
+				<ion-col width-67>
+	    	  		<small>Seller : SansarIndia</small>
+	    	  		<p class="price">{{ 499 | currency:'INR'}}<span class="span-styling">{{ 1499 | currency:'INR'}}</span><span class="discount-styling">54 % off</span></p>
+	    	  		<small style="color: #388e3c;">1 Offer Available</small>
+	    	  		<p>Free delievery in 6-9 days</p>
+				</ion-col>
+				<ion-col width-33>
+				   <img src="assets/img/banner-1.webp">
+				   	<span>
+				   	<ion-select [(ngModel)]="quantity">
+				      <ion-option value="1">1</ion-option>
+				      <ion-option value="2">2</ion-option>
+				      <ion-option value="3">3</ion-option>
+				    </ion-select>
+				    </span>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+		<ion-row class="row">
+			<ion-col width-50>
+		        <p>MOVE TO WISHLIST</p>
+			</ion-col>
+			<ion-col width-50>
+				<p>REMOVE</p>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+
+
+
+<!-- Price Details -->
+	<ion-card>
+		<ion-card-content>
+			<ion-row class="detail-row">
+				<p>PRICE DETAILS</p>
+			</ion-row>
+			<ion-row>
+				<ion-col width-70>
+				  <p>Price(1 item)</p>
+				  <p>Delievery</p>
+				</ion-col>
+				<ion-col width-30>
+				    <p style="text-align: right;">{{ 499 | currency:'INR'}}</p>
+				    <p style="text-align: right;color: #388e3c;">Free</p>
+				</ion-col>
+			</ion-row>
+			
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+
+<ion-footer style="background-color: #fff;">
+	<ion-row>
+		<ion-col width-50>
+		<p> View Price Details</p>
+		</ion-col>
+		<ion-col width-50>
+			<button ion-button full (click)="goToCheckout()">Checkout</button>
+		</ion-col>
+	</ion-row>
+</ion-footer>

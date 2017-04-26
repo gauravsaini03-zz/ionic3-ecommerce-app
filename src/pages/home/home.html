@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+	  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  	<ion-title>vPlanet Commerce</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="search()">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home"> 
+	<ion-slides pager #adSlider (ionSlideWillChange)="trackEvent()" style="height: 250px">
+	  <ion-slide *ngFor="let banner of banners">
+	    <img [src]="banner">
+	  </ion-slide>
+	</ion-slides>
+	
+	<h2 padding>{{ 'categories' | translate }}</h2>
+
+	<!-- Example of Horizontal scrolling widget -->
+	<ion-card>
+		<ion-scroll scrollX="true">
+			<img src="assets/img/cat-1.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-2.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-3.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-4.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-1.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-2.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-3.webp" (click)="goToProducts()">
+			<img src="assets/img/cat-4.webp" (click)="goToProducts()">
+	  </ion-scroll>
+  </ion-card>
+
+	<h2 padding>{{ 'popular' | translate }}</h2>
+	
+	<div class="row img-center" *ngIf="!products">
+		<img height="35" src="assets/img/ring.svg">
+	</div>
+
+	<ion-grid no-padding>
+	  <ion-row>
+	    <ion-col no-padding col-6 col-md-3 *ngFor="let product of products;">
+	    	<ion-card>
+				  <img [src]="product.imageUrl"/>
+				  <ion-card-content>
+					  <ion-card-title no-padding>
+			      	{{product.productName}}
+			      </ion-card-title>
+					  <ion-row no-padding class="center">
+				      <ion-col>
+				        <b>{{product.price | currency }} &nbsp; </b><span class="discount">{{product.listPrice | currency}}</span>
+				      </ion-col>
+				    </ion-row>
+				  </ion-card-content>
+				</ion-card>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+</ion-content>

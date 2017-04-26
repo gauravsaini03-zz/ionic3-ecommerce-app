@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+  	<ion-title>Wishlist</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button ion-button (click)="goToCart()">
+        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="presentPopover($event)">
+          <ion-icon ios="ios-more" md="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+    <ion-list-header>
+      4 Items in your Wishlist (Swipe for options).
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let product of products">
+      <ion-item>
+        <ion-avatar item-left>
+		      <img [src]="product.image">
+		    </ion-avatar>
+		    <h2>{{product.name}}</h2>
+		    <h3>{{product.price | currency}}</h3>
+		    <p>{{product.rating}} stars and 420 reviews</p>
+      </ion-item>
+      <ion-item-options side="right">
+	      <button ion-button color="danger">
+	        <ion-icon name="trash"></ion-icon>
+	        Remove
+	      </button>
+	      <button ion-button color="secondary">
+	        <ion-icon name="cart"></ion-icon>
+	        Add Cart
+	      </button>
+	    </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+	
+	<!-- <ion-list>
+		<ion-item-sliding>
+		  <ion-item *ngFor="let product of products">
+		    <ion-avatar item-left>
+		      <img [src]="product.image">
+		    </ion-avatar>
+		    <h2>{{product.name}}</h2>
+		    <h3>{{product.price | currency}}</h3>
+		    <p>{{product.rating}} stars and 420 reviews</p>
+		  </ion-item>
+		  <ion-item-options side="left">
+	      <button primary>
+	        <ion-icon name="trash"></ion-icon>
+	        Remove
+	      </button>
+	      <button secondary>
+	        <ion-icon name="cart"></ion-icon>
+	        Add
+	      </button>
+	    </ion-item-options>
+		</ion-item-sliding>
+	</ion-list> -->
+
+</ion-content>

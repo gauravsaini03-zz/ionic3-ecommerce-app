@@ -1,0 +1,31 @@
+.home {
+	ion-scroll {
+    white-space: nowrap;
+    height: 150px;
+	}
+
+	ion-scroll img {
+		height: 140px;
+		width: inherit;
+		margin: 10px; 
+		display: inline-block;
+	}
+
+	.card-title-ios, .card-title-md {
+		white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    padding: 8px 10px 8px 10px;
+	}
+	
+	.discount {
+		font-size: 12px;
+		text-decoration: line-through;
+	}
+
+	.img-center {
+		margin-left: 46%;
+	}
+}
+

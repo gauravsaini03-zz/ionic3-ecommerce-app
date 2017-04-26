@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="updateFeed($event)">
+    <ion-refresher-content
+      pullingText="Updating Feed"
+      refreshingSpinner="circles"
+      refreshingText="Updating...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <div class="about-header">
+    <img src="assets/img/banner-1.webp">
+  </div>
+  <div padding class="about-info">
+    <h4>vPlanet Commerce</h4>
+
+    <ion-list no-lines>
+      <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+
+    <p>
+      vPlanet Commerce is a hosted m-commerce solution in Cloud for online merchants. vPlanet Commerce lowers the barriers to entry into online business for start up and small business and at the same time provide the scalability of enterprise solution while they grow into bigger businesses.
+    </p>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab><ion-icon name="help"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button (click)="callNow()" ion-fab><ion-icon name="call"></ion-icon></button>
+      <button (click)="shareViaEmail()" ion-fab><ion-icon name="mail"></ion-icon></button>
+      <button (click)="shareViaFacebook()" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button (click)="shareViaWhatsApp()" ion-fab><ion-icon name="logo-whatsapp"></ion-icon></button>
+      <button (click)="share()" ion-fab><ion-icon name="share"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- <ion-fab bottom right>
+    <button ion-fab mini><ion-icon name="help"></ion-icon></button>
+    <ion-fab-list>
+      <button (click)="call()" ion-fab><ion-icon name="call"></ion-icon></button>
+      <button (click)="sendMail()" ion-fab><ion-icon name="mail"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab> -->
+
+</ion-content>

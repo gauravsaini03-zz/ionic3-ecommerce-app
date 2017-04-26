@@ -1,0 +1,26 @@
+.about-info p {
+  color: #697072;
+  text-align: left;
+  font-size:20px
+}
+
+.about-info ion-icon {
+  color: color($colors, primary);
+  width: 20px;
+}
+
+.md,
+.wp {
+  .about-info [text-right] {
+    margin-right: 0;
+  }
+}
+
+.ios .about-info {
+  text-align: center;
+}
+
+.ios .about-info ion-icon {
+  width: auto;
+  margin-right: 10px;
+}

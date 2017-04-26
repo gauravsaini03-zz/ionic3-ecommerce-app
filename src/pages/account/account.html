@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Account</ion-title>
+  </ion-navbar>
+  <ion-toolbar [color]="isAndroid ? 'primary' : 'light'" no-border-top>
+    <ion-segment [(ngModel)]="account" [color]="isAndroid ? 'light' : 'primary'">
+      <ion-segment-button value="profile">
+        Profile
+      </ion-segment-button>
+      <ion-segment-button value="orders">
+        Orders
+      </ion-segment-button>
+      <ion-segment-button value="wallet">
+        Wallet
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <div [ngSwitch]="account">
+    
+    <div padding-top text-center *ngSwitchCase="'profile'" >
+      <img alt="profileImage" [src]="base64Image">
+      <h2>{{username}}</h2>
+
+      <ion-list inset>
+        <button ion-item (click)="updatePicture()">Update Picture</button>
+        <button ion-item (click)="addDOB()">Update Birth Date</button>
+        <button ion-item (click)="logout()">Logout</button>
+      </ion-list>
+    </div>
+
+    <div padding-top text-center *ngSwitchCase="'orders'" >
+      // Order List data to be shown here
+    </div>
+
+    <div padding-top text-center *ngSwitchCase="'wallet'">
+      // Wallet statement and transaction here.
+    </div>
+
+  </div>
+</ion-content>
